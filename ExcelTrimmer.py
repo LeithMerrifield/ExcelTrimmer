@@ -58,11 +58,12 @@ def trim(filepath : str):
     df.to_excel(filepath)
     x = 1
 
-
 window = tk.Tk()
+window.title("Simple Trimmer/Combiner")
+window.eval('tk::PlaceWindow . center')
 pathButton = ttk.Button(
     text="Add & Trim CSV",
-    width=15
+    width=50
 )
 
 window.bind("<Button-1>", handle_click)
