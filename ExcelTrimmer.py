@@ -37,7 +37,7 @@ def handle_click(event):
     trim(filepath)
 
 def trim(filepath):
-    data = panda.read_csv("RedactedFile.csv")
+    data = panda.read_csv(filepath)
     data.drop(["Internal ID","Document Number"],axis=1,inplace=True)
     groupedData = data.groupby("Item Description").agg({"Item Code": "first","Country of Manufacturer": "first","QTY": "sum","Uplift %":"first","VALUE PER ITEM (AUD)": "first"})
     groupedData.reset_index(inplace=True)
